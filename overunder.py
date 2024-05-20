@@ -20,14 +20,14 @@ class Info(Resource):
     
     
 class Comparison(Resource):
-    def get(self, max, num2):
-        if max>=num2:
+    def get(self, max, num):
+        if max>=num:
             return jsonify({"Warning": 0})
-        elif max<num2:
+        elif max<num:
             return jsonify({"Warning": 1})
     
 api.add_resource(Info, '/')
-api.add_resource(Comparison, '/compare/<int:max>/<int:num2>')
+api.add_resource(Comparison, '/compare/<int:max>/<int:num>')
 
 if __name__ == '__main__':
     app.run(port=5010)
