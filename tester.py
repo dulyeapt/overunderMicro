@@ -1,7 +1,6 @@
-
 import requests
 
-
+# Test code for the API. Also demonstrates the call formate and how to build the url needed for the call.
 while True:
     print("TEST OPTIONS\n"
               " 1: TO VIEW API CALL INSTRUCTIONS\n"

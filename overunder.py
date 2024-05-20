@@ -1,13 +1,12 @@
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
 
-# Create flask
+# Set up flask and the Api
 app = Flask(__name__)
-# API object
 api = Api(app)
 
-# fuctiosn of the microservices
-
+# classes for the API and how to handle their get requests
+#Class for information on api, when called will return its use case
 class Info(Resource):
 
     def get(self):
@@ -18,7 +17,7 @@ class Info(Resource):
         data = request.get_json()
         return jsonify({'data': data}), 201
     
-    
+# Class for the comparison API will take max then value to compare and return a warning of 0 for safe and 1 for danger
 class Comparison(Resource):
     def get(self, max, num):
         if max>=num:
